@@ -1,8 +1,8 @@
 import * as express from "express";
 import * as CTL from "./controllers";
 import * as MDW from "./middlewares";
-import multer from "multer";
-const upload = multer();
+// import multer from "multer";
+// const upload = multer();
 
 export class Routes {
   AuthMiddleware: MDW.AuthMiddleware;
@@ -23,6 +23,6 @@ export class Routes {
       this.AuthMiddleware.checkHeader,
       this.controller.multiplies,
     );
-    this.app.post("/upload",uplo this.controller.uploadfile);
+    this.app.post("/upload", this.controller.uploadfile);
   };
 }
