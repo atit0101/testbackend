@@ -11,12 +11,18 @@ export class Cal {
       }
       a = parseFloat(a);
       b = parseFloat(b);
+
       if (isNaN(a) || isNaN(b)) {
         return res.status(400).json({ error: "Data Is Not Number" });
       }
-      return res
-        .status(200)
-        .json({ code: 200, message: "success", data: a * b });
+
+      let data = a * b;
+      // console.log(Number.parseFloat(data).toFixed(2));
+      return res.status(200).json({
+        code: 200,
+        message: "success",
+        data: data,
+      });
     } catch (error) {
       return res.status(500).json({ status: 500, message: error.message });
     }
