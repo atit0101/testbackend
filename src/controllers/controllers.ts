@@ -17,11 +17,11 @@ export class Cal {
       }
 
       let data = a * b;
-      // console.log(Number.parseFloat(data).toFixed(2));
+      
       return res.status(200).json({
         code: 200,
         message: "success",
-        data: data,
+        data: data.toFixed(2),
       });
     } catch (error) {
       return res.status(500).json({ status: 500, message: error.message });
